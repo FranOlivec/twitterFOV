@@ -52,7 +52,7 @@ class TweetsController < ApplicationController
     @tweet.destroy
 
     respond_to do |format|
-      format.html { redirect_to tweets_url, notice: "El tweet fue destruido exitosamente." }
+      format.html { redirect_to tweets_url, notice: "El Tweet fue eliminado exitosamente." }
       format.json { head :no_content }
     end
   end
