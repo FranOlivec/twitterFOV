@@ -1,0 +1,25 @@
+<div class="row mt-5">
+  <div class="col-md-3">
+    <h2><i class="fa-brands fa-twitter fa-2xl" style="color: #ffffff;"></i>   
+    <%= link_to "Realizar un Nuevo Tweet", new_tweet_path, class: "btn btn-success" %>
+  </div>
+
+  <div class="col-md-6 mt-5">
+    <div id="tweets">
+      <% @tweets.each do |tweet| %>
+        <div class="card text-bg-dark border-secondary mb-3">
+          <div class="card-body">
+            <%= render tweet %>
+            <p>
+              <%= link_to "Mostrar Este Tweet", tweet, class: "btn btn-primary" %>
+            </p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <!-- Contenido de la tercera columna -->
+  </div>
+</div>
