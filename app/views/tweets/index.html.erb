@@ -8,7 +8,7 @@
     </div>  
   </div>
 
-  <div class="col-md-6 mt-5">
+  <div class="col-md-5 mt-5">
     <div id="tweets">
       <% @tweets.each do |tweet| %>
         <div class="card text-bg-dark border-secondary">
@@ -23,7 +23,14 @@
     </div>
   </div>
 
-  <div class="col-md-3">
-    <!-- Contenido de la tercera columna -->
+  <div class="col-md-4">
+    <%= form_with url: tweets_path, method: :get, html: { class: "form-inline" } do |form|%>
+      <div class="input-group">
+        <%= form.text_field :query_text, value: params[:query_text], class: "form-control" %>
+        <div class="input-group-append">
+          <%= form.submit "Buscar Tweet", class: "btn btn-info" %>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
