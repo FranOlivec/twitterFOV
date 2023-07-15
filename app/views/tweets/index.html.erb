@@ -1,7 +1,7 @@
 <div class="row mt-5">
   <div class="col-md-3">
     <div class="container mb-5">
-      <h2><i class="fa-brands fa-twitter fa-2xl" style="color: black;"></i> 
+      <h2><i class="fa-brands fa-twitter fa-2xl" style="color:black;"></i> 
     </div>
     <div class="container">
       <%= link_to "Realizar un Nuevo Tweet", new_tweet_path, class: "btn btn-success" %>
@@ -9,13 +9,19 @@
   </div>
 
   <div class="col-md-5 mt-5">
+    <div class="container mb-5">
+      <h1>Inicio</h1>
+    </div>
+    <div class="container justify-content-center">
+      <%=raw pagy_bootstrap_nav(@pagy)%>
+    </div>
     <div id="tweets">
       <% @tweets.each do |tweet| %>
-        <div class="card text-bg-dark border-secondary">
+        <div class="card border-secondary">
           <div class="card-body">
             <%= render tweet %>
             <p>
-              <%= link_to "Mostrar Este Tweet", tweet, class: "btn btn-outline-info" %>
+              <%= link_to "Mostrar Este Tweet", tweet, class: "btn btn-info" %>
             </p>
           </div>
         </div>
