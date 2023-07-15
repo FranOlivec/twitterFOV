@@ -85,6 +85,4 @@ test:
 #
 production:
   <<: *default
-  database: twitterFOV_production
-  username: twitterFOV
-  password: <%= ENV["TWITTERFOV_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
